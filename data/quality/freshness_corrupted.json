@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-08-06T03:35:43.468480+00:00",
+  "threshold_days": 180,
+  "latest_published": "2026-07-01",
+  "oldest_published": "2000-01-01",
+  "stale_rows": 1,
+  "invalid_published_rows": 0,
+  "total_rows": 19,
+  "is_fresh": false
+}

@@ -1,0 +1,56 @@
+{
+  "samples": 8,
+  "retrieval_hit_rate": 0.25,
+  "mean_token_f1": 0.4083333333333333,
+  "judge_accuracy": 0.375,
+  "mean_judge_score": 2.5,
+  "ragas": {
+    "summary": {
+      "context_precision": 0.1249999999875,
+      "context_recall": 0.125,
+      "faithfulness": 0.2857142857142857
+    },
+    "per_sample": [
+      {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": NaN
+      },
+      {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": 0.0
+      },
+      {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": 0.0
+      },
+      {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": 0.0
+      },
+      {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": 1.0
+      },
+      {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": 0.0
+      },
+      {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": 0.0
+      },
+      {
+        "context_precision": 0.9999999999,
+        "context_recall": 1.0,
+        "faithfulness": 1.0
+      }
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import math
 from statistics import mean
 import os
 import sys
@@ -79,7 +80,7 @@ def _run_ragas(settings: Settings, answers: list[dict[str, Any]]) -> dict[str, A
             shim.ChatVertexAI = type("ChatVertexAI", (), {})
             sys.modules["langchain_community.chat_models.vertexai"] = shim
         from ragas import evaluate
-        from ragas.metrics import answer_relevancy, context_precision, context_recall, faithfulness
+        from ragas.metrics import context_precision, context_recall, faithfulness
 
         dataset = Dataset.from_dict(
             {
@@ -91,13 +92,21 @@ def _run_ragas(settings: Settings, answers: list[dict[str, Any]]) -> dict[str, A
         )
         result = evaluate(
             dataset,
-            metrics=[answer_relevancy, context_precision, context_recall, faithfulness],
+            # Gemini 3.5 Flash does not support the multiple candidates used by
+            # Ragas answer relevancy. The remaining metrics still evaluate
+            # grounding and retrieval quality on the shared test set.
+            metrics=[context_precision, context_recall, faithfulness],
             llm=build_llm(settings=settings, temperature=0.0),
             embeddings=MiniLMEmbeddings(settings.embedding_model),
         )
-        return dict(result)
+        summary: dict[str, float] = {}
+        for metric_name in result.scores[0]:
+            values = [float(row[metric_name]) for row in result.scores if row.get(metric_name) is not None]
+            finite_values = [value for value in values if math.isfinite(value)]
+            summary[metric_name] = mean(finite_values) if finite_values else 0.0
+        return {"summary": summary, "per_sample": result.scores}
     except Exception as exc:  # pragma: no cover
-        return {"error": f"Ragas evaluation failed: {exc}"}
+        return {"error": f"Ragas evaluation failed ({type(exc).__name__}): {exc}"}
 
 
 def evaluate_pipeline(
