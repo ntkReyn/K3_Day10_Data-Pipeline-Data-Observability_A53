@@ -100,7 +100,7 @@ Crossref được clean thành document text và metadata, rồi MiniLM biểu d
 | `mean_token_f1` | 1.000 | 0.408 | 1.000 | Factual extraction phụ thuộc top result/corpus. |
 | `judge_accuracy` | 1.000 | 0.375 | 1.000 | Answers artifact xác nhận recovery. |
 | `mean_judge_score` | 5.000 | 2.625 | 5.000 | Repaired collection đạt baseline theo Gemini judge. |
-| Ragas: precision/recall/faithfulness | 0.750/0.750/0.750 | 0.125/0.125/0.286 | 0.750/0.750/0.750 | Chroma corpus repaired phục hồi grounding. |
+| Ragas: precision/recall/faithfulness | 0.750/0.750/0.750 | 0.125/0.125/0.262 | 0.750/0.750/0.750 | Chroma corpus repaired phục hồi grounding. |
 | Quality checks | PASS | FAIL | PASS | Corpus corrupted có duplicate/blank content. |
 | Freshness status | Fresh | Stale | Fresh | Một document bị đặt date cũ. |
 

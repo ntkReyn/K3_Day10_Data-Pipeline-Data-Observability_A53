@@ -99,7 +99,7 @@ Crossref response được lưu raw rồi parse thành `PaperRecord`; cleaning t
 | `mean_token_f1` | 1.000 | 0.408 | 1.000 | Câu trả lời corrupted giảm mạnh rồi về baseline. |
 | `judge_accuracy` | 1.000 | 0.375 | 1.000 | Gemini judge chấm đúng 3/8 sau corruption. |
 | `mean_judge_score` | 5.000 | 2.625 | 5.000 | Repair phục hồi điểm trung bình. |
-| Ragas: precision/recall/faithfulness | 0.750/0.750/0.750 | 0.125/0.125/0.286 | 0.750/0.750/0.750 | Grounding và retrieval giảm rồi phục hồi. |
+| Ragas: precision/recall/faithfulness | 0.750/0.750/0.750 | 0.125/0.125/0.262 | 0.750/0.750/0.750 | Grounding và retrieval giảm rồi phục hồi. |
 | Quality checks | PASS | FAIL | PASS | Corrupted fail duplicate, summary length và freshness. |
 | Freshness status | Fresh | Stale | Fresh | 0 → 1 → 0 stale row. |
 

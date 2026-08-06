@@ -22,7 +22,7 @@
 
 Nhóm đã hoàn thiện hai pha của data pipeline RAG dùng Crossref. Pha baseline gọi Crossref, lưu cả HTTP response nguyên bản và records đã parse, làm sạch thành 24 paper records, tạo embedding bằng `sentence-transformers/all-MiniLM-L6-v2`, xây ChromaDB và đánh giá trên 8 câu hỏi factual sinh từ chính clean dataset. Baseline đạt retrieval hit rate 1.00, token F1 1.00, Gemini judge accuracy 1.00 và mean judge score 5.00.
 
-Pha corruption cố ý xóa sáu latest records, blank hai summary, inject noise, truncate title, làm stale một publication date và thêm duplicate row. Dataset giảm từ 24 xuống 19 rows; quality report phát hiện duplicate, short summary và freshness failure. Trên cùng test set, retrieval hit rate giảm còn 0.25, token F1 còn 0.408, judge accuracy còn 0.375 và mean judge score còn 2.625. Ragas context precision/recall giảm từ 0.75 xuống 0.125, faithfulness giảm từ 0.75 xuống 0.286.
+Pha corruption cố ý xóa sáu latest records, blank hai summary, inject noise, truncate title, làm stale một publication date và thêm duplicate row. Dataset giảm từ 24 xuống 19 rows; quality report phát hiện duplicate, short summary và freshness failure. Trên cùng test set, retrieval hit rate giảm còn 0.25, token F1 còn 0.408, judge accuracy còn 0.375 và mean judge score còn 2.625. Ragas context precision/recall giảm từ 0.75 xuống 0.125, faithfulness giảm từ 0.75 xuống 0.262.
 
 Repair không sửa tay corrupted dataset mà rebuild clean data từ `data/raw/crossref_records.json`, sau đó re-index và re-evaluate. Repaired dataset trở về 24 rows, quality/freshness PASS và tất cả metric retrieval, answer, Ragas trở lại baseline. Giới hạn chính là Ragas `answer_relevancy` không chạy với Gemini 3.5 Flash do metric yêu cầu multiple candidates; nhóm dùng context precision, context recall và faithfulness thay thế.
 
@@ -233,7 +233,7 @@ Corruption log: `data/results/corruption_log.json` — có đầy đủ type, pa
 | `mean_judge_score` | 5.000 | 2.625 | 5.000 | Corruption làm chất lượng factual answer giảm mạnh. |
 | Ragas context precision | 0.750 | 0.125 | 0.750 | Context relevance bị ảnh hưởng rõ. |
 | Ragas context recall | 0.750 | 0.125 | 0.750 | Relevant evidence bị mất do deleted papers. |
-| Ragas faithfulness | 0.750 | 0.286 | 0.750 | Answer grounding giảm rồi phục hồi. |
+| Ragas faithfulness | 0.750 | 0.262 | 0.750 | Answer grounding giảm rồi phục hồi. |
 | Quality checks | PASS | FAIL | PASS | Corrupted fail duplicate, short summary, freshness. |
 | Freshness status | Fresh | Stale | Fresh | Stale rows: 0 → 1 → 0. |
 
@@ -268,4 +268,4 @@ Một integration issue khác là Ragas 0.4 không tương thích public `model`
 - [x] Metrics, answers, quality/freshness và report artifacts đã tạo.
 - [x] Data corruption có bằng chứng làm RAG metrics giảm và repair phục hồi.
 - [x] Không đưa `.env` hoặc API key vào report.
-- [ ] Stage/commit các artifacts cần nộp trong `data/` và source/report files.
+- [x] Stage/commit các artifacts cần nộp trong `data/` và source/report files.

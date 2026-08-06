@@ -101,7 +101,7 @@ Crossref raw được làm sạch rồi index; test set lấy nội dung và ID 
 | `mean_token_f1` | 1.000 | 0.408 | 1.000 | Answers corrupted lệch ground truth. |
 | `judge_accuracy` | 1.000 | 0.375 | 1.000 | Gemini judge chấm đúng 3/8 sau corruption. |
 | `mean_judge_score` | 5.000 | 2.625 | 5.000 | Recovery kiểm chứng bằng cùng test set. |
-| Ragas: precision/recall/faithfulness | 0.750/0.750/0.750 | 0.125/0.125/0.286 | 0.750/0.750/0.750 | Ba Ragas metrics dùng chung 8 samples. |
+| Ragas: precision/recall/faithfulness | 0.750/0.750/0.750 | 0.125/0.125/0.262 | 0.750/0.750/0.750 | Ba Ragas metrics dùng chung 8 samples. |
 | Quality checks | PASS | FAIL | PASS | Three checks fail ở corrupted state. |
 | Freshness status | Fresh | Stale | Fresh | Threshold 180 ngày, stale rows 0/1/0. |
 

@@ -9,7 +9,7 @@ The same evaluation set was used for baseline, corrupted, and repaired indexes.
 | `retrieval_hit_rate` | 1.0 | 0.25 | 1.0 |
 | `mean_token_f1` | 1.0 | 0.4083333333333333 | 1.0 |
 | `judge_accuracy` | 1.0 | 0.375 | 1.0 |
-| `mean_judge_score` | 5 | 2.5 | 5 |
+| `mean_judge_score` | 5 | 2.625 | 5 |
 
 ## Ragas comparison
 
@@ -17,7 +17,7 @@ The same evaluation set was used for baseline, corrupted, and repaired indexes.
 | --- | ---: | ---: | ---: |
 | `context_precision` | 0.749999999925 | 0.1249999999875 | 0.749999999925 |
 | `context_recall` | 0.75 | 0.125 | 0.75 |
-| `faithfulness` | 0.75 | 0.2857142857142857 | 0.75 |
+| `faithfulness` | 0.75 | 0.2619047619047619 | 0.75 |
 
 ## Data-quality comparison
 

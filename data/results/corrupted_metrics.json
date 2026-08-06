@@ -3,12 +3,12 @@
   "retrieval_hit_rate": 0.25,
   "mean_token_f1": 0.4083333333333333,
   "judge_accuracy": 0.375,
-  "mean_judge_score": 2.5,
+  "mean_judge_score": 2.625,
   "ragas": {
     "summary": {
       "context_precision": 0.1249999999875,
       "context_recall": 0.125,
-      "faithfulness": 0.2857142857142857
+      "faithfulness": 0.2619047619047619
     },
     "per_sample": [
       {
@@ -34,7 +34,7 @@
       {
         "context_precision": 0.0,
         "context_recall": 0.0,
-        "faithfulness": 1.0
+        "faithfulness": 0.8333333333333334
       },
       {
         "context_precision": 0.0,

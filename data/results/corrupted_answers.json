@@ -54,7 +54,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "The model answer provides an entirely different set of authors compared to the reference answer."
+      "reasoning": "The model answer lists completely different authors than the reference answer."
     }
   },
   {
@@ -83,7 +83,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "The model answer provides an incorrect publication date (2026-05-08) compared to the reference answer (2026-07-13)."
+      "reasoning": "The model provided an incorrect publication date (2026-05-08) compared to the reference answer (2026-07-13)."
     }
   },
   {
@@ -139,9 +139,9 @@
     "retrieval_hit": false,
     "token_f1": 0.26666666666666666,
     "judge": {
-      "score": 1,
+      "score": 2,
       "correct": false,
-      "reasoning": "The model answer describes the general limitations of LLMs in clinical settings, such as hallucinations and parametric memory. It completely misses the main topic of the paper, which is about medical students' perceptions and adoption of LLMs in undergraduate medical education."
+      "reasoning": "The model answer focuses on the general limitations of LLMs in clinical settings and biomedical question-answering, whereas the paper's main topic (as indicated by the title and reference answer) is specifically about medical students' perceptions and the adoption of LLMs/RAG in undergraduate medical education."
     }
   },
   {
@@ -170,7 +170,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "The model answer lists completely incorrect authors compared to the reference answer."
+      "reasoning": "The model answer provides a completely different set of authors than the reference answer."
     }
   },
   {

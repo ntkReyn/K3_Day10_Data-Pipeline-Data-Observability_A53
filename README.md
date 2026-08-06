@@ -212,7 +212,7 @@ Sau baseline, tối thiểu cần kiểm tra:
 
 Sau corruption flow, kiểm tra thêm:
 
-- corrupted/repaired dataset và metrics trong `data/`
+- `data/clean/papers_corrupted.csv` cùng corrupted/repaired dataset và metrics trong `data/`
 - `data/results/corruption_log.json`
 - `data/reports/corruption_report.md`
 

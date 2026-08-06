@@ -98,7 +98,7 @@ Raw Crossref response là bằng chứng nguồn; parser biến nó thành `Pape
 | `mean_token_f1` | 1.000 | 0.408 | 1.000 | Blank/noisy content làm answers xấu đi. |
 | `judge_accuracy` | 1.000 | 0.375 | 1.000 | Repair từ raw khôi phục factual answers. |
 | `mean_judge_score` | 5.000 | 2.625 | 5.000 | Gemini judge xác nhận repair về đúng baseline. |
-| Ragas: precision/recall/faithfulness | 0.750/0.750/0.750 | 0.125/0.125/0.286 | 0.750/0.750/0.750 | Data corruption làm grounding giảm rõ rệt. |
+| Ragas: precision/recall/faithfulness | 0.750/0.750/0.750 | 0.125/0.125/0.262 | 0.750/0.750/0.750 | Data corruption làm grounding giảm rõ rệt. |
 | Quality checks | PASS | FAIL | PASS | Fail 1 duplicate, 2 short summaries, 1 stale row. |
 | Freshness status | Fresh | Stale | Fresh | Corrupt date 2000-01-01 tạo 1 stale row. |
 
